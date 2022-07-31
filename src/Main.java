@@ -12,13 +12,13 @@ public class Main {
 
         //Задание 2
 
-        int minAmount = 100_000;
-        int maxAmount = 200_000;
+        int minAmount = arr[0];
+        int maxAmount = arr[0];
         for (int j = 0; j < arr.length; j++) {
-            if (arr[j] > maxAmount) {
-                maxAmount = arr[j];
-            } else {
+            if (minAmount > arr[j]) {
                 minAmount = arr[j];
+            } else if (maxAmount < arr[j]) {
+                maxAmount = arr[j];
             }
         }
         System.out.println("Максимальная сумма за день составляет " + maxAmount + " рублей");
@@ -26,10 +26,8 @@ public class Main {
 
         //Задание 3
 
-        double averageAmount = 0;
-        for (int k = 0; k < arr.length; k++) {
-            averageAmount += arr[k] / 30;
-        }
+        double averageAmount = amountOfPayments / arr.length;
+
         System.out.println("Средняя сумма трат за месяц составляет " + averageAmount + " рублей");
 
         //Задание 4
